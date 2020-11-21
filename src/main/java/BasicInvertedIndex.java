@@ -35,7 +35,7 @@ public class BasicInvertedIndex extends Configured implements Tool {
     private static final Logger LOG = Logger
             .getLogger(BasicInvertedIndex.class);
 
-    private static final int DUCUMENTS_COUNT = 5;
+    private static final int DOCUMENTS_COUNT = 5;
 
     public static class Map extends
             Mapper<Object, Text, Text, Text> {
@@ -176,7 +176,7 @@ public class BasicInvertedIndex extends Configured implements Tool {
 
             ArrayListWritable<FloatWritable> tfidfList = new ArrayListWritable<>();
             for(int i = 0; i < tokenFrequencyList.size(); i++) {
-                float tfidf = (float) ((1 + Math.log10(tokenFrequencyList.get(i).get())) * Math.log10(DUCUMENTS_COUNT/ (float) tokenPostings.size()));
+                float tfidf = (float) ((1 + Math.log10(tokenFrequencyList.get(i).get())) * Math.log10(DOCUMENTS_COUNT/ (float) tokenPostings.size()));
                 tfidfList.add(new FloatWritable(tfidf));
             }
 
