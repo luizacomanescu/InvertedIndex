@@ -35,7 +35,7 @@ public class BasicInvertedIndex extends Configured implements Tool {
     private static final Logger LOG = Logger
             .getLogger(BasicInvertedIndex.class);
 
-    private static final int DOCUMENTS_COUNT = 5;
+    private static final int DOCUMENTS_COUNT = 6;
 
     public static class Map extends
             Mapper<Object, Text, Text, Text> {
